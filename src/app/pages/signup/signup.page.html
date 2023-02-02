@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Profile Picture</ion-label>
+      <ion-input type="file" [(ngModel)]="profilePicture" name="profilePicture"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Full Name</ion-label>
+      <ion-input [(ngModel)]="fullName" name="fullName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Phone Number</ion-label>
+      <ion-input [(ngModel)]="phoneNumber" name="phoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input [(ngModel)]="email" name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Work Address</ion-label>
+      <ion-input [(ngModel)]="workAddress" name="workAddress"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Account Number</ion-label>
+      <ion-input [(ngModel)]="accountNumber" name="accountNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Bank Name</ion-label>
+      <ion-input [(ngModel)]="bankName" name="bankName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">NIN</ion-label>
+      <ion-input [(ngModel)]="nin" name="nin"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">BVN</ion-label>
+      <ion-input [(ngModel)]="bvn" name="bvn"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input [(ngModel)]="password" name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Comfirm Password</ion-label>
+      <ion-input [(ngModel)]="confirm_password" name="confirm_password"></ion-input>
+    </ion-item>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Referee
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item>
+      <ion-label position="stacked">Full Name</ion-label>
+      <ion-input [(ngModel)]="refereeFullName" name="refereeFullName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Referee Address</ion-label>
+      <ion-input [(ngModel)]="refereeAddress" name="refereeAddress"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Referee NIN</ion-label>
+      <ion-input [(ngModel)]="refereeNIN" name="refereeNIN"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Referee BVN</ion-label>
+      <ion-input [(ngModel)]="refereeBVN" name="refereeBVN"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Referee Account Number</ion-label>
+      <ion-input [(ngModel)]="refereeAccountNumber" name="refereeAccountNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Referee Bank Name</ion-label>
+      <ion-input [(ngModel)]="refereeBankName" name="refereeBankName"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="register()">Register</ion-button>
+  </ion-list>
+</ion-content>

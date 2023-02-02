@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Withdrawal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Card Number</ion-label>
+      <ion-input [(ngModel)]="cardNumber" name="cardNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">CVV</ion-label>
+      <ion-input [(ngModel)]="cvv" name="cvv"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Expiration Date</ion-label>
+      <ion-input [(ngModel)]="expirationDate" name="expirationDate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Amount</ion-label>
+      <ion-input [(ngModel)]="amount" name="amount"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label position="stacked">PIN</ion-label>
+    <ion-input type="password" [(ngModel)]="pin"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="makeWithdrawal()">Make Withdrawal</ion-button>
+</ion-content>

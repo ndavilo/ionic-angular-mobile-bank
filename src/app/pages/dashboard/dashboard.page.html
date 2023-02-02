@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>
+      <img src="../../assets/icon/images/speedpay.png" alt="profile" style="width: 120px; height: 40px; margin: 5px;">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header style="background-color: #222428; color:white" >
+      <ion-card-subtitle style="color:white">User Information</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Full Name: {{fullName}}</p>
+      <p>Phone Number: {{phoneNumber}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card style="background-color: rgb(238, 228, 172); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToDeposit()">
+          <ion-card-header>
+            <ion-avatar><img src="../../../assets/icon/images/deposit.png" alt="transfer"></ion-avatar>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Deposit</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6" >
+        <ion-card style="background-color: rgb(233, 146, 146); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToWithdrawt()">
+          <ion-card-header>
+            <ion-avatar><img src="../../../assets/icon/images/withdraw.png" alt="transfer"></ion-avatar>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Withdraw</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card style="background-color: rgb(160, 220, 160); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToTransfer()">
+          <ion-card-header>
+            <ion-avatar><img src="../../../assets/icon/images/send.png" alt="transfer"></ion-avatar>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Transfer</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card style="background-color: rgb(215, 89, 89); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToSignIn()">
+          <ion-card-header>
+            <ion-avatar><img src="../../../assets/icon/images/logout.png" alt="transfer"></ion-avatar>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>Logout</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-card>
+    <ion-card-header style="background-color: #222428">
+      <ion-card-subtitle style="color:white">Account Balance</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{accountBalance}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header style="background-color: #222428">
+      <ion-card-subtitle style="color:white">Recent Transactions</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let transaction of transactions">
+          <p>{{transaction}}</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
