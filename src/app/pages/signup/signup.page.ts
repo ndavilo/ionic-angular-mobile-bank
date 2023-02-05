@@ -89,4 +89,8 @@ export class SignupPage implements OnInit {
     this.showSecondContent = false;
   }
 
+  backButtonClicked() {
+    this.router.navigate(['/']);
+  }
+
 }

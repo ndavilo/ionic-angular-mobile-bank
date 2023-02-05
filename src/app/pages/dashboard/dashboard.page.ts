@@ -53,9 +53,23 @@ export class DashboardPage implements OnInit {
   navigateToWithdrawt(){
     this.router.navigate(['home/withdraw'])
   }
+
   handleClick(service:any) {
     console.log(service);
+    if(service.name==='Airtime'){
+      this.router.navigate(['home/recharge'])
+    }
+    if(service.name==='Data'){
+      this.router.navigate(['home/data'])
+    }
+    if(service.name==='Cable TV'){
+      this.router.navigate(['home/recharge-cable'])
+    }
+    if(service.name==='Power'){
+      this.router.navigate(['home/buy-power'])
+    }
   }
+  
   navigateToProfile(){
     this.router.navigate(['home/profile'])
   }

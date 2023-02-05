@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
@@ -12,7 +13,10 @@ export class PasswordPage {
   confirmPassword: string = '';
   errorMessage: string = '';
 
-  constructor(private alertController: AlertController) { }
+  constructor(
+    private alertController: AlertController,
+    private router: Router
+    ) { }
 
   changePassword() {
     if (!this.currentPassword || !this.newPassword || !this.confirmPassword) {
@@ -49,5 +53,9 @@ export class PasswordPage {
     });
 
     await alert.present();
+  }
+
+  backButtonClicked() {
+    this.router.navigate(['/home/profile']);
   }
 }

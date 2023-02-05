@@ -46,5 +46,8 @@ export class TransferPage implements OnInit {
     // Navigate back to the home page
     this.router.navigate(['home/dashboard']);
   }
+  backButtonClicked() {
+    this.navCtrl.navigateRoot('/home/dashboard');
+  }
 
 }

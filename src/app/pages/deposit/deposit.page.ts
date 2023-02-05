@@ -31,5 +31,8 @@ export class DepositPage implements OnInit {
     // Navigate back to the home page
     this.navCtrl.navigateRoot('/home/dashboard');
   }
+  backButtonClicked() {
+    this.navCtrl.navigateRoot('/home/dashboard');
+  }
 
 }

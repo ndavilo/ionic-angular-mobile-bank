@@ -41,5 +41,8 @@ export class LoginPage implements OnInit {
     // });
     this.router.navigate(['home/dashboard']);
   }
+  backButtonClicked() {
+    this.router.navigate(['/']);
+  }
 
 }

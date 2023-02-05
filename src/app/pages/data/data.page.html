@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/home/dashboard" (click)="backButtonClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Buy Mobile Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Mobile Number</ion-label>
+      <ion-input type="tel" [(ngModel)]="mobileNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Data Volume</ion-label>
+      <ion-select [(ngModel)]="selectedDataVolume">
+        <ion-select-option *ngFor="let dataVolume of dataVolumes" [value]="dataVolume.value">{{dataVolume.label}} - ${{dataVolume.price}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="buyData()">Buy Data</ion-button>
+</ion-content>
+

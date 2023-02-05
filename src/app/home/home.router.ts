@@ -31,6 +31,22 @@ const routes: Routes = [
         path: 'password',
         loadChildren: () => import('../pages/password/password.module').then( m => m.PasswordPageModule)
       },
+      {
+        path: 'recharge',
+        loadChildren: () => import('../pages/recharge/recharge.module').then( m => m.RechargePageModule)
+      },
+      {
+        path: 'data',
+        loadChildren: () => import('../pages/data/data.module').then( m => m.DataPageModule)
+      },
+      {
+        path: 'buy-power',
+        loadChildren: () => import('../pages/buy-power/buy-power.module').then( m => m.BuyPowerPageModule)
+      },
+      {
+        path: 'recharge-cable',
+        loadChildren: () => import('../pages/recharge-cable/recharge-cable.module').then( m => m.RechargeCablePageModule)
+      },
     ]
   },
 ];

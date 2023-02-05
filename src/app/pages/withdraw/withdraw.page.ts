@@ -44,5 +44,8 @@ export class WithdrawPage implements OnInit {
     //this.router.navigate(['home/dashboard']);
     this.navCtrl.navigateRoot('/home/dashboard');
   }
+  backButtonClicked() {
+    this.navCtrl.navigateRoot('/home/dashboard');
+  }
 
 }

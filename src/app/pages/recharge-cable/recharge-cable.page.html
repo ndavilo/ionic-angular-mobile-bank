@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/home/dashboard" (click)="backButtonClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Recharge Cable
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label>Select Cable Provider</ion-label>
+        <ion-select [(ngModel)]="cableProvider" name="cableProvider">
+          <ion-select-option *ngFor="let cableProvider of cableProviders" [value]="cableProvider">{{cableProvider.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Decoder Number</ion-label>
+        <ion-input type="text" [(ngModel)]="decoderNumber" name="decoderNumber"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Number of Months</ion-label>
+        <ion-input type="number" [(ngModel)]="numberOfMonths" name="numberOfMonths"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Plan Name</ion-label>
+        <ion-input type="text" [(ngModel)]="planName" name="planName"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" (click)="buyRechargeCable()">Recharge</ion-button>
+  </form>
+</ion-content>
+

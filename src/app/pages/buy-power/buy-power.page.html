@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/home/dashboard" (click)="backButtonClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Buy Power
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label position="floating">Meter Number</ion-label>
+      <ion-input type="text" [(ngModel)]="meterNumber" name="meterNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Location</ion-label>
+      <ion-input type="text" [(ngModel)]="location" name="location"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Amount</ion-label>
+      <ion-input type="text" [(ngModel)]="amount" name="amount"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="primary" (click)="buyPower()">
+      Buy Power
+    </ion-button>
+
+  </form>
+
+</ion-content>
+
