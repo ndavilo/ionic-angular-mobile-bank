@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -9,14 +10,18 @@ import { NavController } from '@ionic/angular';
 })
 export class ProfilePage implements OnInit {
   profilePicture!: string;
-  fullName!: string;
-  phoneNumber!: string;
-  email!: string;
-  workAddress!: string;
-  accountNumber!: string;
-  bankName!: string;
+  fullName: string = 'Ilonze Chukwunonso David';
+  phoneNumber: string ='+2348161417166';
+  email: string = 'nonsoilonze@gmail.com';
+  workAddress: string='VI Lagos';
+  accountNumber: string ='488847747643';
+  bankName: string = 'Speedpay';
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private navCtrl: NavController,
+    private toastCtrl: ToastController
+  ) { }
 
   ngOnInit() {
     // Get user profile information from the API
@@ -29,6 +34,10 @@ export class ProfilePage implements OnInit {
     //   this.accountNumber = data['accountNumber'];
     //   this.bankName = data['bankName'];
     // });
+  };
+
+  navigateToPassword() {
+    this.navCtrl.navigateRoot('/home/password');
   }
 }
 

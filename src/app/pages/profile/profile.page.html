@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
       Profile
     </ion-title>
@@ -7,39 +7,45 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-avatar class="profile-picture">
-    <img src="{{ profilePicture }}">
-  </ion-avatar>
 
   <ion-list>
     <ion-item>
-      <ion-label position="stacked">Full Name</ion-label>
-      <ion-input [(ngModel)]="fullName" name="fullName" disabled></ion-input>
+      <ion-avatar class="profile-picture">
+        <img [src]="profilePicture ? profilePicture : '../../assets/icon/images/user-default-avatar.png'">
+      </ion-avatar>
     </ion-item>
-
+    <ion-item>
+      <ion-label position="stacked">Full Name</ion-label>
+      <ion-text>{{ fullName }}</ion-text>
+    </ion-item>
     <ion-item>
       <ion-label position="stacked">Phone Number</ion-label>
-      <ion-input [(ngModel)]="phoneNumber" name="phoneNumber" disabled></ion-input>
+      <ion-text>{{ phoneNumber }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Email</ion-label>
-      <ion-input [(ngModel)]="email" name="email" disabled></ion-input>
+      <ion-text>{{ email }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Work Address</ion-label>
-      <ion-input [(ngModel)]="workAddress" name="workAddress" disabled></ion-input>
+      <ion-text>{{ workAddress }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Account Number</ion-label>
-      <ion-input [(ngModel)]="accountNumber" name="accountNumber" disabled></ion-input>
+      <ion-text>{{ accountNumber }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Bank Name</ion-label>
-      <ion-input [(ngModel)]="bankName" name="bankName" disabled></ion-input>
+      <ion-text>{{ bankName }}</ion-text>
     </ion-item>
   </ion-list>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="navigateToPassword()">Change Device Password</ion-button>
+  </ion-toolbar>
+</ion-footer>

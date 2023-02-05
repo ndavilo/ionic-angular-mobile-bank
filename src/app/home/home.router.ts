@@ -27,6 +27,10 @@ const routes: Routes = [
         path: 'withdraw',
         loadChildren: () => import('../pages/withdraw/withdraw.module').then( m => m.WithdrawPageModule)
       },
+      {
+        path: 'password',
+        loadChildren: () => import('../pages/password/password.module').then( m => m.PasswordPageModule)
+      },
     ]
   },
 ];

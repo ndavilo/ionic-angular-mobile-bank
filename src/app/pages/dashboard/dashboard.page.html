@@ -7,87 +7,107 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card (click)="navigateToProfile()">
     <ion-card-header style="background-color: #222428; color:white" >
       <ion-card-subtitle style="color:white">User Information</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <p>Full Name: {{fullName}}</p>
-      <p>Phone Number: {{phoneNumber}}</p>
+      <p>Full Name: Ilonze Chukwunonso David{{fullName}}</p>
+      <p>Phone Number: +2348161417166{{phoneNumber}}</p>
     </ion-card-content>
   </ion-card>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <ion-card style="background-color: rgb(238, 228, 172); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToDeposit()">
-          <ion-card-header>
-            <ion-avatar><img src="../../../assets/icon/images/deposit.png" alt="transfer"></ion-avatar>
+      <ion-col size="4">
+        <ion-card class="transfer-button-card" (click)="navigateToTransfer()">
+          <ion-card-header style="background-color: #222428" >
+            <ion-card-title style="color:white; font-size:.6rem">Transfer</ion-card-title>
           </ion-card-header>
-
           <ion-card-content>
-            <p>Deposit</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="6" >
-        <ion-card style="background-color: rgb(233, 146, 146); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToWithdrawt()">
-          <ion-card-header>
-            <ion-avatar><img src="../../../assets/icon/images/withdraw.png" alt="transfer"></ion-avatar>
-          </ion-card-header>
-
-          <ion-card-content>
-            <p>Withdraw</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-
-      <ion-col size="6">
-        <ion-card style="background-color: rgb(160, 220, 160); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToTransfer()">
-          <ion-card-header>
             <ion-avatar><img src="../../../assets/icon/images/send.png" alt="transfer"></ion-avatar>
-          </ion-card-header>
-          <ion-card-content>
-            <p>Transfer</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
-      <ion-col size="6">
-        <ion-card style="background-color: rgb(215, 89, 89); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" (click)="navigateToSignIn()">
-          <ion-card-header>
-            <ion-avatar><img src="../../../assets/icon/images/logout.png" alt="transfer"></ion-avatar>
+      <ion-col size="4">
+        <ion-card class="withdraw-button-card" (click)="navigateToWithdrawt()">
+          <ion-card-header style="background-color: #222428">
+            <ion-card-title style="color:white; font-size:.55rem">Withdraw</ion-card-title>
           </ion-card-header>
-
           <ion-card-content>
-            <p>Logout</p>
+            <ion-avatar><img src="../../../assets/icon/images/withdraw.png" alt="transfer"></ion-avatar>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-card class="deposit-button-card" (click)="navigateToDeposit()">
+          <ion-card-header style="background-color: #222428">
+            <ion-card-title style="color:white; font-size:.6rem">Deposit</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-avatar><img src="../../../assets/icon/images/deposit.png" alt="transfer"></ion-avatar>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
+
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="3" *ngFor="let service of services">
+          <ion-button fill="clear" (click)="handleClick(service)">
+            <ion-icon [name]="service.icon" style="color: black;"></ion-icon>
+          </ion-button>
+          <p class="ion-text-center">{{ service.name }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </ion-grid>
 
-
-  <ion-card>
+  <ion-card (click)="showBalance = !showBalance">
     <ion-card-header style="background-color: #222428">
       <ion-card-subtitle style="color:white">Account Balance</ion-card-subtitle>
+      <ion-toggle [(ngModel)]="showBalance"></ion-toggle>
     </ion-card-header>
     <ion-card-content>
-      <p>{{accountBalance}}</p>
+      <p>{{ showBalance ? accountBalance : '##########' }}</p>
     </ion-card-content>
   </ion-card>
 
+
   <ion-card>
-    <ion-card-header style="background-color: #222428">
-      <ion-card-subtitle style="color:white">Recent Transactions</ion-card-subtitle>
+    <ion-card-header style="background-color: #222428" (click)="showTransactions = !showTransactions">
+      <ion-card-subtitle style="color:white">
+        Recent Transactions
+        <ion-icon [name]="showTransactions ? 'arrow-down' : 'arrow-forward'" style="color:white"></ion-icon>
+      </ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content *ngIf="showTransactions">
       <ion-list>
         <ion-item *ngFor="let transaction of transactions">
-          <p>{{transaction}}</p>
+          <ion-label>
+            <p>Date: {{transaction.date}}</p>
+            <p>Description: {{transaction.description}}</p>
+            <p>Amount: {{transaction.amount}}</p>
+          </ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card style="text-align: center;" (click)="navigateToSignIn()">
+          <ion-card-header style="background-color: rgb(188, 25, 25)">
+            <ion-card-title style="color:white; font-size:20px">LOGOUT</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

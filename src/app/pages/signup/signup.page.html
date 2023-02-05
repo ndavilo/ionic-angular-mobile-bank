@@ -6,7 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="showFirstContent">
   <ion-list>
     <ion-item>
       <ion-label position="stacked">Profile Picture</ion-label>
@@ -62,7 +62,12 @@
       <ion-label position="stacked">Comfirm Password</ion-label>
       <ion-input [(ngModel)]="confirm_password" name="confirm_password"></ion-input>
     </ion-item>
+  </ion-list>
+  <a (click)="next()" style="margin-left:20px;"> Next Page </a>
+</ion-content>
 
+<ion-content padding *ngIf="showSecondContent">
+  <ion-list>
     <ion-header>
       <ion-toolbar>
         <ion-title>
@@ -100,7 +105,7 @@
       <ion-label position="stacked">Referee Bank Name</ion-label>
       <ion-input [(ngModel)]="refereeBankName" name="refereeBankName"></ion-input>
     </ion-item>
-
-    <ion-button expand="block" (click)="register()">Register</ion-button>
+    <a (click)="previous()" style="margin-left:20px;"> Previous Page </a>
+    <ion-button expand="block" (click)="register()" style="margin-top:40px;">Register</ion-button>
   </ion-list>
 </ion-content>

@@ -8,23 +8,26 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-  fullName!: string;
-  phoneNumber!: string;
-  email!: string;
-  workAddress!: string;
-  accountNumber!: string;
-  bankName!: string;
-  nin!: string;
-  bvn!: string;
-  refereeFullName!: string;
-  refereeAddress!: string;
-  refereeNIN!: string;
-  refereeBVN!: string;
-  refereeAccountNumber!: string;
-  refereeBankName!: string;
-  profilePicture!: string;
-  password!:string;
-  confirm_password!:string;
+  showFirstContent = true;
+  showSecondContent = false;
+  fullName='';
+  phoneNumber='';
+  email='';
+  workAddress='';
+  accountNumber='';
+  bankName='';
+  nin='';
+  bvn='';
+  refereeFullName='';
+  refereeAddress='';
+  refereeNIN='';
+  refereeBVN='';
+  refereeAccountNumber='';
+  refereeBankName='';
+  profilePicture='';
+  password='';
+  confirm_password='';
+  payload=[];
 
   constructor(
     //private http: HttpClient,
@@ -56,7 +59,34 @@ export class SignupPage implements OnInit {
     //   // Handle the response from the API
     //   console.log(data);
     // });
+    // this.payload=[
+    //   "fullName"=this.fullName,
+    //   "phoneNumber": this.phoneNumber,
+    //   "email": this.email,
+    //   "workAddress": this.workAddress,
+    //   "accountNumber": this.accountNumber,
+    //   "bankName": this.bankName,
+    //   "NIN": this.NIN,
+    //   "BVN": this.BVN,
+    //   "refereeFullName": this.refereeFullName,
+    //   "refereeAddress": this.refereeAddress,
+    //   "refereeNIN": this.refereeNIN,
+    //   "refereeBVN": this.refereeBVN,
+    //   "refereeAccountNumber": this.refereeAccountNumber,
+    //   "refereeBankName": this.refereeBankName,
+    //   "profilePicture": this.profilePicture
+    // ]
+    console.log(this.fullName)
     this.router.navigate(['home/dashboard']);
+  }
+  next() {
+    this.showFirstContent = false;
+    this.showSecondContent = true;
+  }
+
+  previous() {
+    this.showFirstContent = true;
+    this.showSecondContent = false;
   }
 
 }

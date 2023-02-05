@@ -15,7 +15,7 @@ export class WithdrawPage implements OnInit {
   amount!: number;
 
   constructor(
-    //private http: HttpClient,
+    private http: HttpClient,
     private navCtrl: NavController,
     private toastCtrl: ToastController
   ) { }

@@ -1,9 +1,35 @@
-ion-content {
-  --ion-background-color: #abb8e3;
-}
 ion-card{
   --ion-background-color: #ebeef4;
 }
 p{
   color: black;
+}
+ion-button {
+  border: 2px solid black;
+  border-radius: 30%;
+  background-color: azure;
+  align-self: center;
+}
+
+.deposit-button-card{
+  border-radius: 10%;
+  background-color: rgb(238, 228, 172);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.withdraw-button-card{
+  border-radius: 10%;
+  background-color: rgb(233, 146, 146);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.transfer-button-card{
+  border-radius: 10%;
+  background-color: rgb(160, 220, 160);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.show {
+  display: block;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
