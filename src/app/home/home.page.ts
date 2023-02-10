@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor() { }
+  showMenu = false;
+
+  constructor(
+    private platform: Platform,
+    private navCtrl: NavController
+    ) {}
 
   ngOnInit() {
+    this.platform.ready().then(() => {
+      if (this.platform.is('desktop')) {
+        this.showMenu = true;
+      }
+    });
   }
-
-  
-
+  navigateToSignIn() {
+    this.navCtrl.navigateForward(['']);
+  }
 
 }

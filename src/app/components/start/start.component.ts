@@ -1,5 +1,5 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-start',
@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class StartComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {}
 
   navigateToLoginPage(){
-    this.router.navigate(['login'])
+    this.navCtrl.navigateForward(['login'])
   }
 
 }

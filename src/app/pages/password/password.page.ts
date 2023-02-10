@@ -1,6 +1,5 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-password',
@@ -15,7 +14,7 @@ export class PasswordPage {
 
   constructor(
     private alertController: AlertController,
-    private router: Router
+    private navCtrl: NavController
     ) { }
 
   changePassword() {
@@ -56,6 +55,6 @@ export class PasswordPage {
   }
 
   backButtonClicked() {
-    this.router.navigate(['/home/profile']);
+    this.navCtrl.navigateBack(['/home/profile']);
   }
 }

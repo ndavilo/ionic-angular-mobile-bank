@@ -1,5 +1,8 @@
 ion-card{
-  --ion-background-color: #ebeef4;
+  background-color: #ebeef4;
+}
+ion-card-header{
+  background-color: #222428
 }
 p{
   color: black;
@@ -32,4 +35,37 @@ ion-button {
 
 .rotate {
   transform: rotate(180deg);
+}
+
+@media (prefers-color-scheme:dark) {
+  ion-card{
+    background-color: #222428;
+  }
+  ion-card-header{
+    background-color: rgb(13, 13, 68)
+  }
+  p{
+    background-color:transparent;
+    color: azure;
+  }
+}
+
+.dark-mode {
+  --ion-background-color: #333;
+  --ion-text-color: #fff;
+  ion-card{
+    background-color: #222428;
+  }
+  ion-card-header{
+    background-color: rgb(13, 13, 68)
+  }
+  p{
+    background-color:transparent;
+    color: azure;
+  }
+}
+
+.light-mode {
+  --ion-background-color: #fff;
+  --ion-text-color: #333;
 }

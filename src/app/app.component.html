@@ -1,3 +1,41 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu slide="start" menuId="m1" contentId="main" type="overlay" background="success">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="ion-text-center">
+          <img src="../../assets/icon/images/speedpay.png" alt="profile" style="width: 120px; height: 40px; margin: 5px;">
+        </ion-title>
+        <ion-buttons slot="end" (click)="onCloseClick()">
+          <ion-icon name="close-outline" size="large"></ion-icon>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list style="height: 100%;">
+        <ion-item lines="none" (click)="onHomeClick()">
+          <ion-avatar slot="start"><img src="../../assets/icon/images/home.png" alt="home"></ion-avatar> Home
+        </ion-item>
+        <ion-item lines="none"  (click)="onTransferClick()" >
+          <ion-avatar slot="start"><img src="../../../assets/icon/images/send.png" alt="transfer"></ion-avatar> Transfer
+        </ion-item>
+        <ion-item lines="none"  (click)="onDepositClick()" >
+          <ion-avatar slot="start"><img src="../../../assets/icon/images/deposit.png" alt="deposit"></ion-avatar> Deposit
+        </ion-item>
+        <ion-item lines="none"  (click)="onWithdrawClick()" >
+          <ion-avatar slot="start"><img src="../../../assets/icon/images/withdraw.png" alt="withdaw"></ion-avatar> Withdraw
+        </ion-item>
+        <ion-item lines="none"  (click)="onProfileClick()" >
+          <ion-avatar slot="start"><img src="../../assets/icon/images/profile.png" alt="profile" ></ion-avatar>
+           Profile
+        </ion-item>
+        <ion-item style="position:fixed; bottom: 0;" lines="none" (click)="navigateToSignIn()" >
+          <ion-avatar slot="start"><img src="../../assets/icon/images/logout.png" alt="profile" ></ion-avatar>
+           Logout
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
+
+

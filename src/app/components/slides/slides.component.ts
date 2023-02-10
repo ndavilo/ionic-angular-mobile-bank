@@ -1,5 +1,5 @@
+import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-slides',
@@ -7,16 +7,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
+  year: number = new Date().getFullYear();
   slideOpts = {
     initialSlide: 0,
     speed: 400
   };
-  constructor(private router: Router,) { }
+  constructor(private navCtrl: NavController,) { }
 
   ngOnInit() {}
 
   navigateToSignUp(){
-    this.router.navigate(['signup'])
+    this.navCtrl.navigateForward(['signup'])
   }
 
 }

@@ -27,6 +27,7 @@ export class DataPage implements OnInit {
   ngOnInit() {
   }
 
+
   buyData() {
     // Call the Payment Gateway API to make the data purchase
     //   this.http.post('https://payment-gateway.com/api/buy-data', {

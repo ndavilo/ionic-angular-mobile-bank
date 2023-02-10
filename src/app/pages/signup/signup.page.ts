@@ -77,7 +77,7 @@ export class SignupPage implements OnInit {
     //   "profilePicture": this.profilePicture
     // ]
     console.log(this.fullName)
-    this.router.navigate(['home/dashboard']);
+    this.navCtrl.navigateBack(['home/dashboard']);
   }
   next() {
     this.showFirstContent = false;
@@ -90,7 +90,7 @@ export class SignupPage implements OnInit {
   }
 
   backButtonClicked() {
-    this.router.navigate(['/']);
+    this.navCtrl.navigateBack(['/']);
   }
 
 }

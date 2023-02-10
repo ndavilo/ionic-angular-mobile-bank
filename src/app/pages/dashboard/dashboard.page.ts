@@ -1,3 +1,4 @@
+import { NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -8,9 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  fullName!: string;
-  phoneNumber!: string;
-  accountBalance:string = 'N 100,000.00';
+  selectedValue = 'light';
+  isDarkMode = false;
+  fullName='';
+  phoneNumber='';
+  accountBalance= 'N 100,000.00';
   showTransactions = false;
   showBalance = false;
   services = [
@@ -31,6 +34,7 @@ export class DashboardPage implements OnInit {
   constructor(
     //private http: HttpClient
     private router: Router,
+    private navCtrl: NavController,
     ) { }
 
   ngOnInit() {
@@ -42,36 +46,39 @@ export class DashboardPage implements OnInit {
     // });
   }
   navigateToDeposit(){
-    this.router.navigate(['home/deposit'])
+    this.navCtrl.navigateForward(['home/deposit'])
   }
   navigateToTransfer(){
-    this.router.navigate(['home/transfer'])
+    this.navCtrl.navigateForward(['home/transfer'])
   }
   navigateToSignIn() {
-    this.router.navigate([''])
+    this.navCtrl.navigateForward([''])
   }
   navigateToWithdrawt(){
-    this.router.navigate(['home/withdraw'])
+    this.navCtrl.navigateForward(['home/withdraw'])
   }
 
   handleClick(service:any) {
     console.log(service);
     if(service.name==='Airtime'){
-      this.router.navigate(['home/recharge'])
+      this.navCtrl.navigateForward(['home/recharge'])
     }
     if(service.name==='Data'){
-      this.router.navigate(['home/data'])
+      this.navCtrl.navigateForward(['home/data'])
     }
     if(service.name==='Cable TV'){
-      this.router.navigate(['home/recharge-cable'])
+      this.navCtrl.navigateForward(['home/recharge-cable'])
     }
     if(service.name==='Power'){
-      this.router.navigate(['home/buy-power'])
+      this.navCtrl.navigateForward(['home/buy-power'])
     }
   }
-  
+
   navigateToProfile(){
-    this.router.navigate(['home/profile'])
+    this.navCtrl.navigateForward(['home/profile'])
+  }
+  navigateToPassword() {
+    this.navCtrl.navigateRoot('/home/password');
   }
 
 }

@@ -1,27 +1,46 @@
 <ion-header>
   <ion-toolbar color="dark">
-    <ion-title>
+    <ion-buttons slot="start" style="width: 10px;">
+      <ion-menu-button menu="m1" color="success"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
       <img src="../../assets/icon/images/speedpay.png" alt="profile" style="width: 120px; height: 40px; margin: 5px;">
     </ion-title>
+    <ion-toggle slot="end" [(ngModel)]="isDarkMode">Dark Mode</ion-toggle>
   </ion-toolbar>
 </ion-header>
+<ion-content [class.dark-mode]="isDarkMode" [class.light-mode]="!isDarkMode">
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="danger" (click)="navigateToPassword()" expandable>Edit</ion-item-option>
+      </ion-item-options>
 
-<ion-content padding>
-  <ion-card (click)="navigateToProfile()">
-    <ion-card-header style="background-color: #222428; color:white" >
-      <ion-card-subtitle style="color:white">User Information</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <p>Full Name: Ilonze Chukwunonso David{{fullName}}</p>
-      <p>Phone Number: +2348161417166{{phoneNumber}}</p>
-    </ion-card-content>
-  </ion-card>
+      <ion-item class="ion-no-padding" lines="none">
 
-  <ion-grid>
+        <ion-card (click)="navigateToProfile()" style="width: 100%;">
+          <ion-card-header>
+            <ion-card-subtitle style="color:white">User Information</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Full Name: Ilonze Chukwunonso David{{fullName}}</p>
+            <p>Phone Number: +2348161417166{{phoneNumber}}</p>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="success" expandable (click)="navigateToProfile()">View</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-grid fixed>
     <ion-row>
-      <ion-col size="4">
+      <ion-col size="4" size-md="2" offset-md="1">
         <ion-card class="transfer-button-card" (click)="navigateToTransfer()">
-          <ion-card-header style="background-color: #222428" >
+          <ion-card-header >
             <ion-card-title style="color:white; font-size:.6rem">Transfer</ion-card-title>
           </ion-card-header>
           <ion-card-content>
@@ -30,24 +49,24 @@
         </ion-card>
       </ion-col>
 
-      <ion-col size="4">
+      <ion-col size="4" size-md="2" offset-md="2">
         <ion-card class="withdraw-button-card" (click)="navigateToWithdrawt()">
-          <ion-card-header style="background-color: #222428">
+          <ion-card-header>
             <ion-card-title style="color:white; font-size:.55rem">Withdraw</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-avatar><img src="../../../assets/icon/images/withdraw.png" alt="transfer"></ion-avatar>
+            <ion-avatar><img src="../../../assets/icon/images/withdraw.png" alt="withdaw"></ion-avatar>
           </ion-card-content>
         </ion-card>
       </ion-col>
 
-      <ion-col size="4">
+      <ion-col size="4" size-md="2" offset-md="2">
         <ion-card class="deposit-button-card" (click)="navigateToDeposit()">
-          <ion-card-header style="background-color: #222428">
+          <ion-card-header>
             <ion-card-title style="color:white; font-size:.6rem">Deposit</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-avatar><img src="../../../assets/icon/images/deposit.png" alt="transfer"></ion-avatar>
+            <ion-avatar><img src="../../../assets/icon/images/deposit.png" alt="deposit"></ion-avatar>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -67,7 +86,7 @@
   </ion-grid>
 
   <ion-card (click)="showBalance = !showBalance">
-    <ion-card-header style="background-color: #222428">
+    <ion-card-header>
       <ion-card-subtitle style="color:white">Account Balance</ion-card-subtitle>
       <ion-toggle [(ngModel)]="showBalance"></ion-toggle>
     </ion-card-header>
@@ -78,7 +97,7 @@
 
 
   <ion-card>
-    <ion-card-header style="background-color: #222428" (click)="showTransactions = !showTransactions">
+    <ion-card-header (click)="showTransactions = !showTransactions">
       <ion-card-subtitle style="color:white">
         Recent Transactions
         <ion-icon [name]="showTransactions ? 'arrow-down' : 'arrow-forward'" style="color:white"></ion-icon>
@@ -86,7 +105,7 @@
     </ion-card-header>
     <ion-card-content *ngIf="showTransactions">
       <ion-list>
-        <ion-item *ngFor="let transaction of transactions">
+        <ion-item  *ngFor="let transaction of transactions">
           <ion-label>
             <p>Date: {{transaction.date}}</p>
             <p>Description: {{transaction.description}}</p>
@@ -96,18 +115,4 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-
-
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12">
-        <ion-card style="text-align: center;" (click)="navigateToSignIn()">
-          <ion-card-header style="background-color: rgb(188, 25, 25)">
-            <ion-card-title style="color:white; font-size:20px">LOGOUT</ion-card-title>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>

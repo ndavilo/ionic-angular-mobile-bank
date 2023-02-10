@@ -8,7 +8,6 @@ import { PasswordPageRoutingModule } from './password-routing.module';
 
 import { PasswordPage } from './password.page';
 import { ComponentsModule } from "../../components/components.module";
-
 @NgModule({
     declarations: [PasswordPage],
     imports: [

@@ -39,10 +39,10 @@ export class LoginPage implements OnInit {
     //     }).then(alert => alert.present());
     //   }
     // });
-    this.router.navigate(['home/dashboard']);
+    this.navCtrl.navigateBack(['home/dashboard']);
   }
   backButtonClicked() {
-    this.router.navigate(['/']);
+    this.navCtrl.navigateBack(['/']);
   }
 
 }

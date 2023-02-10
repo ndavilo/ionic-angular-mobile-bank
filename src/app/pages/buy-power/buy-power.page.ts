@@ -37,11 +37,11 @@ export class BuyPowerPage implements OnInit {
     }).then(toast => toast.present());
 
     // Navigate back to the home page
-    this.navCtrl.navigateRoot('/home/dashboard');
+    this.navCtrl.navigateBack('/home/dashboard');
   }
 
   backButtonClicked() {
-    this.navCtrl.navigateRoot('/home/dashboard');
+    this.navCtrl.navigateBack('/home/dashboard');
   }
 }
 
